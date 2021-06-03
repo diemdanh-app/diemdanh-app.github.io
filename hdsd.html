@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .responsive {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3px;
+            background-color: lightgray;
+            color: black;
+            position: absolute;
+            bottom: auto;
+            width: 100%;
+            height: 50px;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #d6d6c2;
+            color: black;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Lên Đầu Trang</button>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Thông tin chung</a>
+        <a href="hdsd.html" class="active">Hướng dẫn sử dụng</a>
+        <a href="manguon.html">Bản quyền</a>
+        <a href="javascript:void(1);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <div style="padding-left:16px">
+        <p><a href="#gvhd">Chức năng dành cho giảng viên và giáo viên chủ nhiệm tại bộ môn</a></p>
+        <ul>
+            <li><a href="#gv1">Tải và cài đặt ứng dụng</a></li>
+            <li><a href="#gv2">Chức năng điểm danh và thống kê vi phạm dành cho giáo viên giảng dạy</a></li>
+            <li><a href="#gv3">Chức năng theo dõi tình hình lớp dành cho giáo viên chủ nhiệm</a></li>
+            <li><a href="#gv4">Cập nhật dữ liệu và thoát ứng dụng</a></li>
+        </ul>
+        <p><a href="#khoa">Chức năng cán bộ quản lý Khoa</a></p>
+    </div>
+    <div style="padding-left:16px">
+        <h2 id="gvgd">Chức năng dành cho giảng viên và giáo viên chủ nhiệm tại bộ môn</h2>
+        <h3 id="gv1">Tải và cài đặt ứng dụng</h3>
+        <p>Tải AppSheet (tại <a
+                href="https://play.google.com/store/apps/details?id=x1Trackmaster.x1Trackmaster&hl=vi&gl=US">Google Play
+            </a> trên Aandroid hay <a href="https://apps.apple.com/us/app/appsheet/id732548900">Apple Store</a> trên
+            iOS)</p>
+
+        <p class="center">
+            <img class="responsive" src="2.png" /><br>
+            Hình 1: Tải ứng dụng AppSheet
+        </p>
+
+        <p>Mở AppSheet và đăng nhập bằng Google</p>
+        <p class="center">
+            <img class="responsive" src="3.png" /><br>
+            Hình 2: Đăng nhập ứng dụng AppSheet qua Google
+        </p>
+
+        <p>Tài khoản đăng nhập (chỉ chia sẻ các thầy cô giảng dạy trong bộ môn ):</p>
+        <p class="center">
+            <img class="responsive" src="4.png" /><br>
+            Hình 3: Giao diện đăng nhập AppSheet qua Google
+        </p>
+
+        <p>Khi đăng nhập thành công ứng dụng sẽ có giao diện</p>
+        <p class="center">
+            <img class="responsive" src="5.png" /><br>
+            Hình 4: Giao diện ban đầu khi vừa đăng nhập AppSheet thành công
+        </p>
+        <p>Nhấp chuột vào biểu tượng <img src="3gach.png" /> bên trái dòng chữ <b>Share with me</b></p>
+        <p class="center">
+            <img class="responsive" src="6.png" /><br>
+            Hình 5: Mở cửa sổ thực đơn AppSheet
+        </p>
+
+        <p>Chọn <b>Created by me</b> từ cửa sổ hiện ra:</p>
+        <p class="center">
+            <img class="responsive" src="7.png" /><br>
+            Hình 6: Chọn tính năng Created by me
+        </p>
+
+        <p>Sẽ xuất hiện 2 chức năng chính của ứng dụng:</p>
+        <ul>
+            <li>Bộ môn Tin học: Điểm Danh Bộ Môn Tin và GVCN Bộ Môn Tin</li>
+            <li>Bộ môn Điện: Điểm Danh Bộ Môn Điện và GVCN Bộ Môn Điện</li>
+            <li>Bộ môn Điện Lạnh: Điểm Danh Bộ Môn Điện Lạnh và GVCN Bộ Môn Điện Lạnh</li>
+        </ul>
+        <p>Giả sử đăng nhập tài khoản bộ môn Tin giao diện ứng dụng:</p>
+        <p class="center">
+            <img class="responsive" src="8.png" /><br>
+            Hình 7: Giao diện ứng dụng hỗ trợ điểm danh và chủ nhiệm
+        </p>
+
+        <h3 id="gv2">Chức năng điểm danh và thống kê vi phạm dành cho giáo viên giảng dạy</h3>
+        <p>Hướng dẫn minh họa áp dụng cho giảng viên và giáo viên chủ nhiệm tại bộ môn Tin học, các bộ môn khác tương
+            tự.</p>
+        <p>Giảng viên giảng dạy, nếu điểm danh theo buổi học thì chọn Điểm Danh Bộ Môn Tin để mở giao diện:</p>
+        <p class="center">
+            <img class="responsive" src="9.png" /><br>
+            Hình 8: Giao diện giới thiệu ứng dụng
+        </p>
+
+        <p>Như hình trên, giao diện gồm 4 mục như sau:</p>
+        <ul>
+            <li><b>Về Ứng Dụng</b>: Xuất hiện mặc định giới thiệu vài nét cơ bản về ứng dụng;</li>
+            <li><b>ABC</b>: Giúp giảng viên đánh giá A, B, C theo buổi học, môn học, lớp học mình phụ trách;</li>
+            <li><b>Điểm Danh</b>: Giúp giảng viên điểm danh HSSV theo buổi, môn, lớp mình phụ trách;</li>
+            <li><b>Vi Phạm</b>: Giúp giảng viên theo dõi tình hình vi phạm HSSV theo môn học và lớp mình phụ trách để có
+                cơ sở cho việc thiết lập danh sách thi kết thúc môn hay những hình thức đánh giá khác.</li>
+        </ul>
+        <p>Sau khi xem thông tin ứng dụng tại mục Về Ứng Dụng, giảng viên giảng dạy chọn các tính năng Điểm Danh,
+            ABC hay Vi Phạm.
+            Nếu giảng viên chọn mục ABC xuất hiện giao diện:</p>
+        <p class="center">
+            <img class="responsive" src="10.png" /><br>
+            Hình 9: Giao diện ABC
+        </p>
+
+        <p>Chú ý: Lúc này, nếu giảng viên nhấn vào nút Cancel hay nút <img src="arrow.png" /> bên trái chữ ABC
+            thì sẽ thoát giao diện ABC này và sẽ đến giao diện Về Ứng Dụng. Lúc này có thể chọn lại mục
+            ABC hay các mục khác.
+            Nhập thông tin với lưu ý vì số giờ A, B hay C không quá 4 nên nếu nhập số âm hay lớn hơn 4
+            sẽ báo lỗi nhập như sau:</p>
+        <p class="center">
+            <img class="responsive" src="11.png" /><br>
+            Hình 10: Giao diện khi nhập thông tin ABC lỗi
+        </p>
+
+        <p>
+            Nhập xong thông tin nhấn nút Save để lưu hoặc nhấn Cancel để hủy thông tin vừa nhập. Sau khi nhấn Save (hay
+            Cancel), giao diện Về Ứng Dụng xuất hiện trở lại. Đối với trường hợp nhấn Save, để đề phòng kết nối Internet
+            không ổn định đảm bảo dữ liệu vừa nhập sẽ được lưu đến cơ sở dữ liệu, giảng viên cần nhấn nút <img
+                src="circlearrow.png" /> gốc phải trên
+            giao
+            diện Về Ứng Dụng:</p>
+
+        <p class="center">
+            <img class="responsive" src="12.png" /><br>
+            Hình 11: Cập nhật dữ liệu ứng dụng
+        </p>
+
+        <p>Nếu giảng viên chọn mục Điểm Danh xuất hiện giao diện:</p>
+        <p class="center">
+            <img class="responsive" src="13.png" /><br>
+            Hình 12: Giao diện Điểm Danh
+        </p>
+        <p>
+            Chú ý: Lúc này, nếu giảng viên nhấn vào nút Cancel hay nút <img src="arrow.png" /> bên trái chữ Điểm Danh
+            thì sẽ thoát giao diện
+            Điểm
+            Danh này và sẽ đến giao diện Về Ứng Dụng. Lúc này có thể chọn lại mục Điểm Danh hay các mục khác.
+            Mục Lớp chứa tất cả các lớp CĐ và TC hiện có tại bộ môn. Nhấn vào ô Lớp sẽ xuất hiện giao diện</p>
+        <p class="center">
+            <img class="responsive" src="14.png" /><br>
+            Hình 13: Giao diện danh sách Lớp
+        </p>
+
+        <p>
+            Chọn Lớp và nhấn Done để trở lại giao diện Điểm Danh. Khi chọn Lớp sẽ xuất hiện danh sách HSSV tương ứng của
+            lớp
+            đó trong mục Họ và Tên</p>
+
+        <p class="center">
+            <img class="responsive" src="15.png" /><br>
+            Hình 14: Giao diện Điểm Danh xuất hiện mục Họ và Tên sau khi chọn Lớp
+        </p>
+
+        <p>
+            Danh sách Họ và Tên cho phép giảng viên chọn nhiều HSSV cùng lúc nếu các HSSV này cùng thời điểm và hình
+            thức vi
+            phạm</p>
+        <p class="center">
+            <img class="responsive" src="16.png" /><br>
+            Hình 15: Giao diện Họ và Tên
+        </p>
+        <p>
+            Nhấn Select All chọn tất cả HSSV trong danh sách mặc dù điều này hiếm khi xảy ra. Chọn Done để hoàn tất việc
+            chọn sẽ trở lại giao diện Điểm Danh như sau:</p>
+        <p class="center">
+            <img class="responsive" src="17.png" /><br>
+            Hình 16: Giao diện sau khi chọn Họ và Tên HSSV vi phạm
+        </p>
+        <p>
+            Mục MĐ/MH chứa tất cả các môn học và mô đun của nghề đào tạo tương ứng bộ môn. Ở đây là chương trình Cao
+            đẳng vì
+            bao hàm cả chương trình Trung cấp.</p>
+        <p>Riêng bộ môn Điện có hai nghề là Điện Công nghiệp và Điện Dân dụng với 2
+            chương trình đào tạo khác nhau nên chương trình nào xuất hiện phụ thuộc vào việc chọn lớp của giảng viên.
+            Nếu mã
+            lớp được chọn có 3 chữ cái đầu tiên là ĐCN (ví dụ ĐCN13CĐ3A) thì chương trình Điện Công nghiệp sẽ xuất hiện,
+            nếu
+            3 chữ cái đầu tiên là ĐDD (ví dụ ĐDD14TC4A) thì chương trình Điện Dân Dụng sẽ xuất hiện.</p>
+        <p>Kế tiếp, giảng viên sẽ chọn Ngày, Buổi (Sáng hoặc Chiều) và hình thức vi phạm trong mục Vi Phạm:</p>
+        <p class="center">
+            <img class="responsive" src="18.png" /><br>
+            Hình 17: Giao diện mục Vi Phạm
+        </p>
+
+        <p>
+            Mục Vi Phạm giúp giảng viên theo dõi tình hình vi phạm HSSV theo môn học (MĐ/MH) và lớp mình phụ trách để có
+            cơ
+            sở cho việc thiết lập danh sách thi kết thúc môn hay những hình thức đánh giá khác. Giao diện Vi Phạm:</p>
+        <p class="center">
+            <img class="responsive" src="19.png" /><br>
+            Hình 18: Giao diện chức năng Vi Phạm
+        </p>
+
+
+        <p>Các giảng viên có thể thống kê vi phạm của HSSV theo Lớp và MĐ/MH theo 2 bước:</p>
+        <p><b>Bước 1</b>: Nhấn nút <img src="update.png" /> bên dưới màn hình để đến giao diện cập nhật thông tin:</p>
+        <p class="center">
+            <img class="responsive" src="20.png" /><br>
+            Hình 19: Giao diện lọc thông tin xem tình hình vi phạm theo MĐ/MH
+        </p>
+
+        <p>Chọn khoảng thời gian (Ngày Bắt Đầu và Ngày Kết Thúc), lớp và MĐ/MH. Sau khi nhập thông nhấn nút Save để lưu
+            hay
+            nhấn nút Cancel để hủy. Đối với trường hợp nhấn Save, để đề phòng kết nối Internet không ổn định đảm bảo dữ
+            liệu
+            vừa nhập sẽ được lưu đến cơ sở dữ liệu, giảng viên cần nhấn nút <img src="circlearrow.png" /> gốc phải trên
+            giao diện Vi Phạm.</p>
+
+        <p><b>Bước 2</b>: Sau khi nhấn nút Save sẽ trở lại giao diện Vi Phạm. Tiếp đến, giảng viên nhấn vào nút <img
+                src="thongkevipham.png" /> THỐNG
+            KÊ VI PHẠM
+            THEO MĐ/MH để mở giao diện HT – RL Tháng. Nếu không có thông tin gì thì giao diện như sau:</p>
+        <p class="center">
+            <img class="responsive" src="21.png" /><br>
+            Hình 20: Giao diện không có dữ liệu về tình hình vi phạm theo MĐ/MH
+        </p>
+
+        <p>Nếu có thông tin:</p>
+        <p class="center">
+            <img class="responsive" src="22.png" /><br>
+            Hình 21: Giao diện biểu đồ thống kê về tình hình vi phạm theo MĐ/MH
+        </p>
+
+        <p>
+            Biểu đồ trên thống kê các trường hợp vi phạm bao gồm Hút Thuốc, Vắng Có Phép và Đi Trễ.
+            Giảng viên có thể nhấn vào các vùng màu để xem thông tin về HSSV vi phạm tương ứng.</p>
+        <p>Lưu ý rằng, vì giảng viên có thể chọn nhiều HSSV có cùng hình thức vi phạm (ví dụ Vắng Có Phép)
+            nên các số liệu trên biểu đồ chỉ thể hiện số lần giảng viên thực hiện điểm danh tương ứng với
+            hình thức vi phạm. Ví dụ, từ biểu đồ chúng ta có thể thấy 1 trường hợp Vắng Không Phép (màu xanh lá)
+            và để xem cụ thể HSSV nào vi phạm trường hợp này, nhấn vào vùng màu xanh lá:</p>
+        <p class="center">
+            <img class="responsive" src="23.png" /><br>
+            Hình 22: Giao diện chi tiết thống kê mức 1 về tình hình vi phạm theo MĐ/MH
+        </p>
+
+        <p> Vì chỉ có 1 trường hợp tương ứng 1 lần điểm danh của giảng viên nên chỉ có 1 hàng liệt kê HSSV vi phạm.
+            Giảng viên có thể xem chi tiết hơn bằng cách nhấn chuột vào hàng thông tin (hàng chứa dữ liệu):</p>
+
+        <p class="center">
+            <img class="responsive" src="24.png" /><br>
+            Hình 23: Giao diện chi tiết thống kê mức 2 về tình hình vi phạm theo MĐ/MH
+        </p>
+
+        <p>Như ví dụ trong trường hợp này, 3 em sinh viên Tiến Anh, Quốc Bảo và Văn Cảnh cùng vắng có phép
+            trong buổi sáng học môn Tin học ngày 14/4/2021.</p>
+        <p>Lúc này, giảng viên có thể trở lại giao diện điểm danh, xem vi phạm của HSSV hay
+            đánh giá ABC bằng cách nhấn vào các mục Vi Phạm, Điểm Danh hay ABC ở cuối giao diện.</p>
+        <h3 id="gv3">Chức năng theo dõi tình hình lớp dành cho giáo viên chủ nhiệm</h3>
+        <p>Chú ý: Chức năng này chỉ cho phép giáo viên chủ nhiệm xem thông tin vi phạm lớp mình nhưng không
+            được chỉnh sửa thông tin. Muốn chỉnh sửa cần thông qua giảng viên giảng dạy.</p>
+        <p>Nếu giảng viên đang ở chức năng Điểm Danh Bộ Môn Tin thì cần trở lại giao diện chính của ứng dụng AppSheet
+            theo các bước:</p>
+
+        <p>Trở lại giao diện Về Ứng Dụng</p>
+
+        <p class="center">
+            <img class="responsive" src="25.png" /><br>
+            Hình 24: Giao diện giới thiệu ứng dụng
+        </p>
+
+        <p>Nhấn nút <img src="3gach.png" /> ở góc trái trên giao diện gần chữ Về Ứng Dụng để mở thực đơn ứng dụng:</p>
+
+        <p class="center">
+            <img class="responsive" src="26.png" /><br>
+            Hình 25: Giao diện thực đơn ứng dụng
+        </p>
+
+        <p>Chọn mục App Gallery sẽ trở lại giao diện chính AppSheet:</p>
+
+        <p class="center">
+            <img class="responsive" src="27.png" /><br>
+            Hình 26: Giao diện ứng dụng điểm danh và chủ nhiệm
+        </p>
+
+
+        <p>Kế tiếp chọn chức năng GVCN Bộ Môn Tin. Giống như Điểm Danh Bộ Môn Tin, giao diện mặc định xuất hiện vẫn là
+            Về Ứng Dụng.
+            GVCN Bộ Môn Tin có hai chức năng chính là Xem Tình Hình Lớp:</p>
+
+        <p class="center">
+            <img class="responsive" src="28.png" /><br>
+            Hình 27: Giao diện các lớp
+        </p>
+
+        <p>Và Báo Cáo Tháng:</p>
+        <p class="center">
+            <img class="responsive" src="29.png" /><br>
+            Hình 28: Giao diện báo cáo tháng
+        </p>
+
+        <p>Tại mục Báo Cáo Tháng thầy cô có thể rút trích thông tin vi phạm của HSSV lớp mình chủ nhiệm bằng
+            cách nhấn nút <img src="update.png" /> để đến giao diện cập nhật thông tin:</p>
+        <p class="center">
+            <img class="responsive" src="30.png" /><br>
+            Hình 29: Giao diện lọc thông tin báo cáo tháng
+        </p>
+
+
+        <p> Nhấn nút Save để lưu thông tin hay nút Cancel để hủy thông tin sẽ trở lại giao diện Báo Cáo Tháng. </p>
+        <p>Đối với trường hợp nhấn Save, để đề phòng kết nối Internet không ổn định
+            đảm bảo dữ liệu vừa nhập sẽ được lưu đến cơ sở dữ liệu, giảng viên cần nhấn nút <img
+                src="circlearrow.png" /> gốc phải
+            trên giao diện Báo Cáo Tháng. Kế tiếp nhất nút để xem thông tin về lớp tại một khoảng thời gian
+            nào đó (từ Ngày Bắt Đầu đến Ngày Kết Thúc) sẽ xuất hiện giao diện như sau:</p>
+
+        <p class="center">
+            <img class="responsive" src="31.png" /><br>
+            Hình 30: Giao diện thông tin báo cáo tháng
+        </p>
+
+        <p>Giao diện này cung cấp chi tiết thông tin vi phạm của HSSV và tổng số giờ A, B, C
+            trong khoảng thời gian cụ thể (từ Ngày Bắt Đầu đến Ngày Kết Thúc) của lớp được chọn để làm cơ
+            sở đánh giá và báo cáo tháng từ giáo viên chủ nhiệm.</p>
+        <p>Lưu ý rằng, số liệu thống kê lần này là đếm từng HSSV vi phạm từ dữ liệu được giảng viên giảng
+            dạy điểm danh các giờ dạy của mình. Nếu mục THỐNG KÊ VI PHẠM THEO MĐ/MH trong chức năng Điểm Danh
+            thống kê số lần giảng viên điểm danh (ví dụ 3 trường hợp Vắng Có Phép ở trên chỉ tính 1 lần) thì
+            trong mục Báo Cáo Tháng sẽ đếm cụ thể từng HSSV (trong ví dụ trên là 3).
+            Đây là số liệu quan trọng để GVCN, bộ môn và Khoa đánh giá chính xác tình hình lớp.</p>
+        <p>Tại mục Xem Tình Hình Lớp, thầy cô nhấn chọn lớp mình chủ nhiệm để xem thông tin tình hình vi phạm
+            HSSV lớp mình chủ nhiệm. Có 2 chức năng:</p>
+        <ul>
+            <li>Nhấn nút Hôm Nay để xem thông tin HSSV vi phạm ngày hiện tại</li>
+            <li>Nhấn nút Tình Hình Lớp để xem thông tin HSSV vi phạm từ đầu kỳ hay năm học (kể từ khi ứng dụng được
+                dùng)</li>
+        </ul>
+
+        <p class="center">
+            <img class="responsive" src="32.png" /><br>
+            Hình 31: Giao diện chi tiết các lớp
+        </p>
+
+        <h3 id="gv4">Cập nhật dữ liệu và thoát ứng dụng</h3>
+        <p>Vì ứng dụng được sử dụng bởi nhiều giảng viên nên dữ liệu phải thường xuyên được cập nhật.
+            Dù chọn chức năng GVCN Bộ Môn Tin hay Điểm Danh Bộ Môn Tin, các thầy cô thường xuyên nhấn nút <img
+                src="circlearrow.png" /> góc phải
+            trên giao diện để cập nhật thông tin. </p>
+        <p>Để thoát chức năng Điểm Danh hay GVCN, chỉ cần nhấn nút <img src="3gach.png" /> ở góc trái trên giao diện để
+            mở thực đơn ứng dụng
+            và chọn Log out:</p>
+        <p class="center">
+            <img class="responsive" src="33.png" /><br>
+            Hình 32: Giao diện thực đơn và thoát ứng dụng
+        </p>
+
+        <h2 id="khoa">Chức năng cán bộ quản lý Khoa</h2>
+        <p>Mỗi giảng viên hay trưởng bộ môn chỉ được xem thông tin về tình hình các lớp (CĐ hay TC) thuộc bộ môn.
+            Cán bộ quản lý Khoa được cấp quyền xem thông tin tất cả các lớp lớp (CĐ hay TC) thuộc Khoa quản lý.
+            Tuy nhiên, cán bộ quản lý khoa chỉ được xem thông tin từ các lớp, không được phép chỉnh sửa thông tin.</p>
+        <p>Quá trình cài đặt, sử dụng ứng dụng của cán bộ quản lý khoa tương tự các giảng viên bộ môn chỉ khác
+            ở tài khoản đăng nhập:</p>
+        <p>Cán bộ quản lý khoa được chia sẻ các chức năng GVCN của mỗi bộ môn nên khi lần đầu đăng nhập ứng dụng
+            sẽ xuất hiện giao diện GVCN của một bộ môn nào đó đã được chia sẻ như sau:</p>
+        <p class="center">
+            <img class="responsive" src="34.png" /><br>
+            Hình 33: Giao diện giới thiệu ứng dụng
+        </p>
+
+        <p>
+            Nhấn nút <img src="3gach.png" /> ở góc trái trên giao diện để mở thực đơn ứng dụng và chọn App Gallery hay
+            AppSheet sẽ xuất hiện g
+            iao diện chứa chức năng GVCN từ các bộ môn:</p>
+
+        <p class="center">
+            <img class="responsive" src="35.png" /><br>
+            Hình 34: Giao diện ứng dụng chia sẻ mức Khoa
+        </p>
+        <p>
+            Để ý dòng chữ<b>Shared with me</b> ở trên vì đây là các tính năng được chia sẻ từ các bộ môn chứ không phải
+            được
+            tạo từ tài khoản này (Create by me).
+            Từ đây, cán bộ quản lý khoa có thể chọn và xem thông tin các lớp thuộc các bộ môn.</p>
+
+
+
+    </div>
+
+    <div class="footer">
+        <p>Bản quyền &copy; 2021 Trần Ngọc Minh, bộ môn Tin, khoa Điện - Điện tử.</p>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

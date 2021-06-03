@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .responsive {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 3px;
+            background-color: lightgray;
+            color: black;
+            position: absolute;
+            bottom: auto;
+            width: 100%;
+            height: 60px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Thông tin chung</a>
+        <a href="hdsd.html">Hướng dẫn sử dụng</a>
+        <a href="manguon.html">Bản quyền</a>
+        <a href="javascript:void(1);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div style="padding-left:16px">
+        <h2>Ý nghĩa ứng dụng</h2>
+        <ul>
+            <li>Cung cấp tiện ích nhằm hỗ trợ giáo viên chủ nhiệm, giảng viên giảng dạy, bộ môn và khoa thuận tiện hơn
+                trong
+                công tác quản lý HSSV.</li>
+            <li>Hỗ trợ và phát huy hiệu quả tối đa cho các biện pháp quản lý HSSV sẵn có như sổ lên lớp, sổ chủ nhiệm,
+                sổ đầu
+                bài,...</li>
+            <li>Giúp cho công tác phối hợp giữa giảng viên giảng dạy, giáo viên chủ nhiệm, bộ môn và khoa chặt chẽ hơn,
+                nhanh
+                chóng hơn trong việc xử lý các trường hợp vi phạm từ HSSV.</li>
+        </ul>
+
+        <h2>Nguyên tắc hoạt động</h2>
+        <p> Ứng dụng được xây dựng trên nền tảng đám mây AppSheet – là một phần của Google Cloud (dịch vụ đám mây
+            công ty Google). Sơ đồ hoạt động tổng quát:
+        <p class="center">
+            <img class="responsive" src="1.png" /><br>
+            Hình 1: Nguyên tắc hoạt động của ứng dụng
+        </p>
+        <p>
+            Ứng dụng được xây dựng trên nền tảng AppSheet và dữ liệu sẽ được lưu trữ trên các dịch vụ lưu trữ đám
+            mây (Cloud storage) như Google Drive, DropBox, Office365,…Ứng dụng cập nhật và xử lý dữ liệu, người dùng cài
+            đặt và
+            sử dụng trên các thiết bị di động như điện thoại thông minh (smart phone) hay máy tính bảng (tablet). Các
+            bước
+            chính để tải, cài đặt và sử dụng ứng dụng trên thiết bị di động như sau:</p>
+
+
+        <p class="center">
+            <img src="1.1.png" /><br>
+            Bước 1. Tải và cài đặt ứng dụng AppSheet từ Google Play hay App Store (Apple).
+        </p>
+
+        <p class="center">
+            <img src="1.2.png" /><br>
+            Bước 2. Đăng nhập ứng dụng thông qua tài khoản Gmail.
+        </p>
+
+        <p class="center">
+            <img src="1.3.png" /><br>
+            Bước 3. Giảng viên giảng dạy thực hiện việc điểm danh các buổi lên lớp thông qua chức năng điểm danh và
+            ứng dụng sẽ cập nhật dữ liệu.
+        </p>
+
+        <p class="center">
+            <img src="1.4.png" /><br>
+            Bước 4. Giảng viên giảng dạy có thể trích xuất thông tin HSSV theo mô đun hay môn học mình phụ trách và
+            giáo viên chủ nhiệm có thể trích xuất thông tin về tình hình vi phạm của HSSV lớp mình chủ nhiệm trong một
+            khoảng thời gian cụ thể.
+        </p>
+
+        <p class="center">
+            <img src="1.5.png" /><br>
+            Bước 5. Quản lý Khoa có quyền xem thông tin vi phạm của HSSV tất cả các lớp thuộc Khoa quản lý. Giảng
+            viên mỗi bộ môn sẽ thấy được thông tin tất cả các lớp thuộc bộ môn mình nhưng không thấy được các bộ môn
+            khác.
+        </p>
+    </div>
+    <div class="footer">
+        <p>Bản quyền &copy; 2021 Trần Ngọc Minh, bộ môn Tin, khoa Điện - Điện tử.</p>
+    </div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
